@@ -6,8 +6,9 @@ These are the dotfiles I use for my Arch Linux install
 * Statusbar: [dwm-bar](https://github.com/joestandring/dwm-bar)
 * Terminal: [st](https://st.suckless.org/) ([alpha](https://st.suckless.org/patches/alpha/) [scrollback](https://st.suckless.org/patches/scrollback/))
 * Application launcher: [dmenu](https://dmenu.suckless.org/)
+* File manager: [lf](https://github.com/gokcehan/lf)
 * Launcher: [dmenu](https://tools.suckless.org/dmenu/)
-* Font: [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)
+* Font: [Hack](https://sourcefoundry.org/hack/)
 * Compositor: [picom](https://github.com/yshui/picom)
 * Editor: [NeoVim](https://neovim.io) with:
     * [vim-plug](https://github.com/junegunn/vim-plug)
