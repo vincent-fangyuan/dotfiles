@@ -1,0 +1,83 @@
+# Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        video/*|image/*/application/pdf) xdg-open "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+}}
+
+cmd sudomkfile ${{
+  printf "File Name: "
+  read ans
+  sudo $EDITOR $ans
+}}
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map c
+map e
+map f
+
+map ee $$EDITOR "$f"
+map u $view "$f"
+
+map . set hidden!
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map mf mkfile
+map mr sudomkfile
+map md mkdir
+map ms $mkscript
+map ch chmod
+map bg setwallpaper
+map o open_config
+map br $vimv $fx
+map r rename
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
+
+map gh cd ~
+map gm cd ~/media
+map gp cd ~/media/Pictures
+map gpw cd ~/media/Pictures/Wallpapers
+map gdl cd ~/media/Downloads
+map gd cd ~/media/Documents
+map gmc cd ~/media/Music
+map gv cd ~/media/Videos
+map gc cd ~/.config
+map gdev cd ~/dev
