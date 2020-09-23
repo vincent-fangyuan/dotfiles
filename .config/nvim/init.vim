@@ -8,6 +8,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'dracula/vim', {'as':'dracula'}
 
+" Plugin for LaTeX
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 " Set colorscheme
@@ -42,10 +45,13 @@ set autoindent
 set fileformat=unix
 
 " Indentation and wrapping for CSS/HTML/JS
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \| set softtabstop=2
+    \| set shiftwidth=2
+
+" Set vimtex tex flavor
+let g:tex_flavor = 'latex'
 
 " Automatically import in Go
 let g:go_fmt_command = "goimports"
